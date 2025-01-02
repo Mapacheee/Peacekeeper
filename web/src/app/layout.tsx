@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Image src="/images/image.svg" alt="Logo" width={100} height={100} />
+        <Image src="/images/logo.svg" alt="Logo" width={100} height={100} priority/>
         {children}
       </body>
     </html>
