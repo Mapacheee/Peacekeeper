@@ -13,7 +13,7 @@ Peacekeeper can detect scenes of violence and sospicius activities thanks by Pyt
 
 ## Monitor Panel (Web)
 
-Peacekeeper has a dashboard to monitor all suspicious activities and scenes of violence that have been captured by cameras. Made with NextJS Framework.
+Peacekeeper has a dashboard to monitor all suspicious activities and scenes of violence that have been captured by cameras. Made with Svelvekit.
 
 
 ## Currently this project is under work 🛠️

@@ -8,6 +8,23 @@
 #include <vector>
 #include <cstring>
 
+#ifndef LOGGER_H
+#define LOGGER_H
+
+#include <NvInfer.h>
+#include <iostream>
+
+class Logger : public nvinfer1::ILogger {
+public:
+    void log(Severity severity, const char* msg) noexcept override {
+        if (severity <= Severity::kINFO) {
+            std::cout << "tensor rt ->" << msg << std::endl;
+        }
+    }
+};
+
+#endif
+
 std::unique_ptr<nvinfer1::ICudaEngine> loadEngine(const std::string& enginePath, nvinfer1::IRuntime* runtime) {
     std::ifstream file(enginePath, std::ios::binary);
     if (!file.good()) {
@@ -91,7 +108,8 @@ int main() {
         cudaFree(deviceImage);
         cudaFree(deviceText);
         cudaFree(deviceOutput);
-    } catch (const std::exception& e) {
+    }
+    catch (const std::exception& e) {
         std::cerr << "error: " << e.what() << std::endl;
         return -1;
     }
