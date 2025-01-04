@@ -37,10 +37,11 @@
         padding: 1rem;
         border-radius: 5px;
         background-color: #fff;
-    }
-    .card img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
     }
 </style>
