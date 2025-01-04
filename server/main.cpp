@@ -1,4 +1,3 @@
-#include "Logger.h"
 #include <NvInfer.h>
 #include <NvInferRuntime.h>
 #include <cuda_runtime_api.h>
@@ -7,12 +6,6 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
-
-#ifndef LOGGER_H
-#define LOGGER_H
-
-#include <NvInfer.h>
-#include <iostream>
 
 class Logger : public nvinfer1::ILogger {
 public:
