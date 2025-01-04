@@ -1,20 +1,50 @@
 <section class="hero">
-    <div class="menu">
-        <img class="camera-image" src="camera.png" alt="image"/>
-        <h1 class="">Protección en tiempo real con tecnología avanzada.</h1>
-        <p>Detecta y previene situaciones de violencia con nuestro sistema inteligente de análisis de imágenes.</p>
-        <button class="cta-button">Saber más</button>
+    <div class="content">
+        <img class="camera-image" src="camera.png" alt="image" />
+        <div class="text-content">
+            <h1>Protección en tiempo real con tecnología avanzada.</h1>
+            <p>Detecta y previene situaciones de violencia con nuestro sistema inteligente de análisis de imágenes.</p>
+            <button class="cta-button">Saber más</button>
+        </div>
     </div>
-
 </section>
 
 <style>
     .hero {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 2rem;
-        background-color: #f8f8f8;
-
+        background: linear-gradient(to bottom, #eeeeee, #999999);
     }
+
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .camera-image {
+        margin-left: -3%;
+        max-width: 70%;
+        transform: scaleX(-1);
+    }
+
+    .text-content {
+        text-align: left;
+    }
+
+    .text-content h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .text-content p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #555;
+    }
+
     .cta-button {
         background-color: #333;
         color: #fff;
@@ -24,8 +54,8 @@
         cursor: pointer;
         font-size: 1rem;
     }
-    .camera-image {
-        transform: scaleX(-1);
-        margin-left: -65%;
+
+    .cta-button:hover {
+        background-color: #555;
     }
 </style>
