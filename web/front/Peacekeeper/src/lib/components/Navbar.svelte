@@ -3,6 +3,7 @@
     import MediaQuery from 'svelte-media-queries'
     // @ts-ignore
     import MenuIcon from 'svelte-icons/ti/TiThMenu.svelte'
+    import BrandLogo from './BrandLogo.svelte'
 
     $: pathSegments = $page.url.pathname.split('/')
     $: pathName = pathSegments[pathSegments.length - 1] || '/'
@@ -25,10 +26,7 @@
         </ul>
         <ul>
             <li>
-                <a href="/" class="brand-logo">
-                    <img src="/logo/pk_only_logo.png" alt="a Peacekeeper" />
-                    PEACEKEEPER
-                </a>
+                <BrandLogo />
             </li>
         </ul>
         <ul>
@@ -37,10 +35,7 @@
     {:else}
         <ul>
             <li>
-                <a href="/" class="brand-logo">
-                    <img src="/logo/pk_only_logo.png" alt="a Peacekeeper" />
-                    PEACEKEEPER
-                </a>
+                <BrandLogo />
             </li>
         </ul>
 
@@ -95,24 +90,6 @@
         border: none;
         &:focus {
             box-shadow: none;
-        }
-    }
-
-    .brand-logo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        font-size: 2rem;
-        letter-spacing: 0.1em;
-        color: #000000;
-        font-weight: bold;
-
-        img {
-            height: 90px;
-        }
-
-        &:hover {
-            color: #000000;
         }
     }
 
