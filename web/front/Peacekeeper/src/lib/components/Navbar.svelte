@@ -17,21 +17,12 @@
 
 <nav class={isMovileSize ? 'mobile-navbar' : 'navbar'}>
     {#if isMovileSize}
-        <ul>
-            <li>
-                <button class="menu-button" on:click={toggleMenu}>
-                    <MenuIcon />
-                </button>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <BrandLogo />
-            </li>
-        </ul>
-        <ul>
-            <li></li>
-        </ul>
+        <button class="menu-button" on:click={toggleMenu}>
+            <MenuIcon />
+        </button>
+        <div class="brand-logo">
+            <BrandLogo />
+        </div>
     {:else}
         <ul>
             <li>
@@ -82,12 +73,20 @@
         background-color: #eeeeee;
     }
 
+    .brand-logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     .menu-button {
         width: 4rem;
         height: 4rem;
         color: #000000;
+        margin-right: -4rem;
         background-color: transparent;
         border: none;
+
         &:focus {
             box-shadow: none;
         }
