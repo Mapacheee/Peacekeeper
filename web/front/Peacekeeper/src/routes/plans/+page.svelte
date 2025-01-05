@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Servicios</title>
+    <title>Planes</title>
 </svelte:head>
 
 <main>

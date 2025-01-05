@@ -2,19 +2,19 @@
     <h2>Protección en todo tipo de entornos</h2>
     <div class="cards">
         <div class="card">
-            <img src="path/to/image1.jpg" alt="Vía pública" />
+            <!-- <img src="path/to/image1.jpg" alt="Vía pública" /> -->
             <p>Vía pública</p>
         </div>
         <div class="card">
-            <img src="path/to/image2.jpg" alt="Sala de clases" />
+            <!-- <img src="path/to/image2.jpg" alt="Sala de clases" /> -->
             <p>Sala de clases</p>
         </div>
         <div class="card">
-            <img src="path/to/image3.jpg" alt="Parques" />
+            <!-- <img src="path/to/image3.jpg" alt="Parques" /> -->
             <p>Parques</p>
         </div>
         <div class="card">
-            <img src="path/to/image4.jpg" alt="Cancha" />
+            <!-- <img src="path/to/image4.jpg" alt="Cancha" /> -->
             <p>Cancha</p>
         </div>
     </div>
@@ -38,10 +38,10 @@
         border-radius: 5px;
         background-color: #fff;
 
-        img {
+        /* img {
             width: 100%;
             height: auto;
             border-radius: 5px;
-        }
+        } */
     }
 </style>
