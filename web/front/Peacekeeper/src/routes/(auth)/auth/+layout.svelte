@@ -3,7 +3,6 @@
     import '@picocss/pico'
 </script>
 
-<!-- something like <VerticalMenu /> -->
 <slot />
 
 <style>

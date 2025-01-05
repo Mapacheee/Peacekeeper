@@ -1,0 +1,28 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    input {
+        height: 2.5rem;
+    }
+    input[type='submit'] {
+        padding: 0.5rem 1rem;
+    }
+    input::placeholder {
+        color: #888;
+    }
+}
+
+.error {
+    color: #f00;
+}
+
+.hide {
+    display: none;
+}
