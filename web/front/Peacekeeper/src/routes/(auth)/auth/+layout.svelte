@@ -30,4 +30,9 @@
         background-color: #c2c7d0;
         border-radius: 50%;
     }
+    @media (max-width: 530px) {
+        .brand-logo {
+            position: relative;
+        }
+    }
 </style>
