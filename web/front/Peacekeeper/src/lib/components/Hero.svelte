@@ -1,9 +1,12 @@
 <section class="hero">
     <div class="content">
-        <img class="camera-image" src="camera.png" alt="image" />
+        <img class="camera-image" src="camera.png" alt="2 cameras" />
         <div class="text-content">
             <h1>Protección en tiempo real con tecnología avanzada.</h1>
-            <p>Detecta y previene situaciones de violencia con nuestro sistema inteligente de análisis de imágenes.</p>
+            <p>
+                Detecta y previene situaciones de violencia con nuestro sistema
+                inteligente de análisis de imágenes.
+            </p>
             <button class="cta-button">Saber más</button>
         </div>
     </div>
