@@ -1,5 +1,5 @@
 <script lang="ts">
-    import './global.css'
+    import '../global.css'
     import '@picocss/pico'
 
     import Navbar from '$lib/components/Navbar.svelte'
