@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0;
+    min-height: 100vh;
 
     form {
         display: flex;
@@ -15,6 +17,11 @@
         input::placeholder {
             color: #888;
         }
+    }
+
+    h4 {
+        text-align: center;
+        color: #c2c7d0;
     }
 
     .error {

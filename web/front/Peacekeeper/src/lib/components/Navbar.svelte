@@ -58,7 +58,7 @@
             </li>
         {/each}
         <li>
-            <a href="auth" class="panel-text">Sign in</a>
+            <a href="auth" class="panel-text">Login</a>
         </li>
     </aside>
 {/if}
