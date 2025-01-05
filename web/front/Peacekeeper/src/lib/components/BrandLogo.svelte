@@ -14,12 +14,22 @@
         font-weight: bold;
 
         img {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
         }
 
         &:hover {
             color: #000000;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .brand-logo {
+            font-size: 130%;
+            img {
+                width: 100%;
+                height: 3rem;
+            }
         }
     }
 </style>

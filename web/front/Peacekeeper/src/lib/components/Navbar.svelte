@@ -15,7 +15,7 @@
 
 <MediaQuery query="(max-width: 850px)" bind:matches={isMovileSize} />
 
-<nav class={isMovileSize ? 'mobile-navbar' : 'navbar'}>
+<nav class="navbar">
     {#if isMovileSize}
         <button class="menu-button" on:click={toggleMenu}>
             <MenuIcon />
@@ -69,8 +69,11 @@
         padding-right: 1rem;
     }
 
-    .mobile-navbar {
-        background-color: #eeeeee;
+    @media (max-width: 850px) {
+        .navbar {
+            background-color: #eeeeee;
+            padding: 0 1rem;
+        }
     }
 
     .brand-logo {
@@ -83,7 +86,6 @@
         width: 4rem;
         height: 4rem;
         color: #000000;
-        margin-right: -4rem;
         background-color: transparent;
         border: none;
 
