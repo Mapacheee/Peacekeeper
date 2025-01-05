@@ -4,7 +4,7 @@
     // TODO: add form validation
 </script>
 
-<main class="container">
+<main class="container form-container">
     <form method="post">
         <fieldset>
             <label>

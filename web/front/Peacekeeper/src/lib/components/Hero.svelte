@@ -21,6 +21,7 @@
         align-items: center;
         justify-content: space-between;
         padding-bottom: 2rem;
+        width: 100%;
         background: linear-gradient(to bottom, #eeeeee, #999999);
     }
 
