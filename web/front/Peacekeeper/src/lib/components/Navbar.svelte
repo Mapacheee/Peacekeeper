@@ -66,7 +66,7 @@
 <style>
     .navbar {
         background-color: #eeeeee;
-        padding-right: 1rem;
+        padding-right: 2rem;
     }
 
     @media (max-width: 850px) {
@@ -136,10 +136,10 @@
     a.panel-text {
         background-color: #0f1620;
         color: #eeeeee !important;
-        padding: 0.5rem 1rem;
+        padding: 0.3rem 1rem;
         position: unset;
         font-size: 120%;
-        /* border-radius: 11%; */
+        border-radius: 11%;
 
         transition: color 0.3s ease;
 

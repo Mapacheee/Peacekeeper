@@ -1,10 +1,10 @@
 <a href="/" class="brand-logo">
-    <img src="/logo/pk_only_logo.png" alt="a Peacekeeper" />
-    PEACEKEEPER
+    <img src="/logo/pk_logo.png" alt="a Peacekeeper" />
 </a>
 
 <style>
     .brand-logo {
+        margin-left: -10%;
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -14,8 +14,8 @@
         font-weight: bold;
 
         img {
-            width: 80px;
-            height: 80px;
+            width: 50%;
+            height: auto;
         }
 
         &:hover {
@@ -23,7 +23,7 @@
         }
     }
 
-    @media (max-width: 400px) {
+    /*@media (max-width: 400px) {
         .brand-logo {
             font-size: 130%;
             img {
@@ -31,5 +31,5 @@
                 height: 3rem;
             }
         }
-    }
+    }*/
 </style>

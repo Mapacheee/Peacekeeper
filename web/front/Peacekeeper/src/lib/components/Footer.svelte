@@ -1,6 +1,7 @@
 <footer>
-    <h2>about</h2>
+    <h2>Sobre nosotros</h2>
     <span> algo sobre nosotros, ya to sabe</span>
+    <span>lore ipsun asdjkasdjkas</span>
     <!-- agregar el footer -->
 </footer>
 

@@ -1,75 +1,75 @@
-<script lang="ts">
-    import MediaQuery from 'svelte-media-queries'
-</script>
-
 <section class="hero">
-    <img class="camera-image" src="camera.png" alt="2 cameras" />
-    <div class="text-content">
-        <h1>Protección en tiempo real con tecnología avanzada.</h1>
-        <p>
-            Detecta y previene situaciones de violencia con nuestro sistema
-            inteligente de análisis de imágenes.
-        </p>
-        <button class="cta-button">Saber más</button>
+    <div class="content">
+        <img class="camera-image" src="camera.png" alt="image" />
+        <div class="text-content">
+            <h1>Protección en tiempo real con tecnología avanzada.</h1>
+            <p>Detecta y previene situaciones de violencia con</p>
+            <p>nuestro sistema inteligente de análisis de imágenes.</p>
+            <a class="cta-button">Saber más</a>
+        </div>
     </div>
 </section>
 
 <style>
     .hero {
+        margin-top: -2%;
         display: flex;
         justify-content: center;
         align-items: center;
-        justify-content: space-between;
-        padding-bottom: 2rem;
-        width: 100%;
+        padding: 2rem;
         background: linear-gradient(to bottom, #eeeeee, #999999);
     }
 
-    @media (max-width: 530px) {
-        .hero {
-            flex-wrap: wrap;
-        }
-
-        div.text-content {
-            width: 80%;
-            text-align: center;
-            margin: 0 auto;
-            padding: 0;
-        }
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
 
     .camera-image {
+        margin-left: -23%;
         max-width: 70%;
         transform: scaleX(-1);
     }
 
     .text-content {
-        text-align: left;
-        padding-right: 5rem;
-        padding-left: 2rem;
+        margin-left: 15%;
+        text-align: center;
     }
 
     .text-content h1 {
+        font-weight: 600;
+        font-family: 'DM Sans', sans-serif;
+        letter-spacing: -0.05rem;
         margin-bottom: 1rem;
         font-size: 1.5rem;
+        color: #000000
     }
 
     .text-content p {
+        line-height: 0.4rem;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 200;
         margin-bottom: 1rem;
         font-size: 1rem;
-        color: #555;
+        color: #000000;
     }
 
     .cta-button {
-        background-color: #333;
-        color: #fff;
+        font-family: 'Agdasima', sans-serif;
+        background-color: #0F1620;
+        color: #BDBDBD;
         border: none;
-        padding: 0.7rem 1.5rem;
-        border-radius: 5px;
+        text-decoration: none;
+        padding: 0.3rem 1rem;
+        border-radius: 8px;
         cursor: pointer;
+        font-size: 1.2rem;
+        transition: background-color 0.3s ease;
     }
 
     .cta-button:hover {
         background-color: #555;
     }
+
 </style>
