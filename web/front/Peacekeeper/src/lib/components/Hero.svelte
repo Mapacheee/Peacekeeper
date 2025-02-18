@@ -1,16 +1,20 @@
 <section class="hero">
     <div class="content">
-        <img class="camera-image" src="camera.png" alt="image" />
+        <img class="camera-image" src="camera.png" alt="cameras" />
         <div class="text-content">
             <h1>Protección en tiempo real con tecnología avanzada.</h1>
             <p>Detecta y previene situaciones de violencia con</p>
             <p>nuestro sistema inteligente de análisis de imágenes.</p>
-            <a class="cta-button">Saber más</a>
+            <a href="." role="button">Ver planes</a>
+            <a href="." role="button" class="secondary">Saber más</a>
         </div>
     </div>
 </section>
 
 <style>
+    :root {
+        --primary-button-bg-color: #0f1620;
+    }
     .hero {
         margin-top: -2%;
         display: flex;
@@ -43,7 +47,7 @@
         letter-spacing: -0.05rem;
         margin-bottom: 1rem;
         font-size: 1.5rem;
-        color: #000000
+        color: #000000;
     }
 
     .text-content p {
@@ -55,10 +59,10 @@
         color: #000000;
     }
 
-    .cta-button {
+    a[role='button'] {
         font-family: 'Agdasima', sans-serif;
-        background-color: #0F1620;
-        color: #BDBDBD;
+        background-color: var(--primary-button-bg-color);
+        color: #bdbdbd;
         border: none;
         text-decoration: none;
         padding: 0.3rem 1rem;
@@ -66,10 +70,15 @@
         cursor: pointer;
         font-size: 1.2rem;
         transition: background-color 0.3s ease;
-    }
 
-    .cta-button:hover {
-        background-color: #555;
-    }
+        &:hover {
+            background-color: #555;
+        }
 
+        &.secondary {
+            background-color: transparent;
+            color: #000000;
+            outline: 1px solid var(--primary-button-bg-color);
+        }
+    }
 </style>
