@@ -1,4 +1,4 @@
-<section class="environments">
+<section id="environments" class="environments">
     <h2>Protección en todo tipo de entornos</h2>
     <div class="cards">
         <article>

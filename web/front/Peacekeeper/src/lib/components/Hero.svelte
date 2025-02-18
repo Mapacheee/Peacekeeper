@@ -1,3 +1,14 @@
+<script lang="ts">
+    function handleScrollToPlans() {
+        const plans = document.querySelector('#plans')
+        plans?.scrollIntoView({ behavior: 'smooth' })
+    }
+    function handleScrollToEnvironments() {
+        const information = document.querySelector('#environments')
+        information?.scrollIntoView({ behavior: 'smooth' })
+    }
+</script>
+
 <section class="hero">
     <div class="content">
         <img class="camera-image" src="camera.png" alt="cameras" />
@@ -5,8 +16,11 @@
             <h1>Protección en tiempo real con tecnología avanzada.</h1>
             <p>Detecta y previene situaciones de violencia con</p>
             <p>nuestro sistema inteligente de análisis de imágenes.</p>
-            <a href="." role="button">Ver planes</a>
-            <a href="." role="button" class="secondary">Saber más</a>
+            <button onclick={handleScrollToPlans}>Ver planes</button>
+            <button
+                onclick={handleScrollToEnvironments}
+                class="secondary outline">Saber más</button
+            >
         </div>
     </div>
 </section>
@@ -59,7 +73,7 @@
         color: #000000;
     }
 
-    a[role='button'] {
+    button {
         font-family: 'Agdasima', sans-serif;
         background-color: var(--primary-button-bg-color);
         color: #bdbdbd;

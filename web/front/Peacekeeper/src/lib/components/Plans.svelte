@@ -69,7 +69,7 @@
     ]
 </script>
 
-<section class="environments">
+<section id="plans">
     <h2>Planes para usuarios</h2>
     <div class="grid">
         {#each userPlans as plan}
