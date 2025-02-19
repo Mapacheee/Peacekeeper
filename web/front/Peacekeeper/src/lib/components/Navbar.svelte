@@ -1,23 +1,33 @@
 <script lang="ts">
-    import { page } from '$app/stores'
     import MediaQuery from 'svelte-media-queries'
     // @ts-ignore
     import MenuIcon from 'svelte-icons/ti/TiThMenu.svelte'
     import BrandLogo from './BrandLogo.svelte'
 
-    $: pathSegments = $page.url.pathname.split('/')
-    $: pathName = pathSegments[pathSegments.length - 1] || '/'
+    let isMovileSize: boolean
     let isMenuOpen = false
-    let isMovileSize = true
 
-    const toggleMenu = () => (isMenuOpen = !isMenuOpen)
+    function handleToggleMenu() {
+        isMenuOpen = !isMenuOpen
+    }
+
+    function handleScrollToElementId(elementId: string) {
+        const plans = document.querySelector(`#${elementId}`)
+        plans?.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    const pages: Array<Array<string>> = [
+        ['Inicio', ''],
+        ['Planes', 'plans'],
+        ['About', 'about']
+    ]
 </script>
 
 <MediaQuery query="(max-width: 850px)" bind:matches={isMovileSize} />
 
 <nav class="navbar">
     {#if isMovileSize}
-        <button class="menu-button" on:click={toggleMenu}>
+        <button class="mobile-menu-button" onclick={handleToggleMenu}>
             <MenuIcon />
         </button>
         <div class="brand-logo">
@@ -31,37 +41,40 @@
         </ul>
 
         <ul class="desktop-menu">
-            {#each [['/', 'Inicio'], ['services', 'Servicio'], ['plans', 'Planes']] as [hash, text]}
+            {#each pages as [name, id]}
                 <li>
-                    <a href={hash} class={pathName === hash ? 'active' : ''}>
-                        {text}
-                    </a>
+                    <button
+                        class={name == 'Inicio' ? 'active' : ''}
+                        onclick={() => handleScrollToElementId(id)}
+                    >
+                        {name}
+                    </button>
                 </li>
             {/each}
             <li>
-                <a href="auth" class="panel-text">Login</a>
+                <a href="auth" class="button">Login</a>
             </li>
         </ul>
     {/if}
-</nav>
-{#if isMovileSize && isMenuOpen}
-    <aside>
-        {#each [['/', 'Inicio'], ['services', 'Servicio'], ['plans', 'Planes']] as [hash, text]}
+    {#if isMovileSize && isMenuOpen}
+        <aside>
+            {#each pages as [name, id]}
+                <li>
+                    <button
+                        role="link"
+                        class={name == 'Inicio' ? 'active' : ''}
+                        onclick={() => handleScrollToElementId(id)}
+                    >
+                        {name}
+                    </button>
+                </li>
+            {/each}
             <li>
-                <a
-                    href={hash}
-                    class={pathName === hash ? 'active' : ''}
-                    on:click={toggleMenu}
-                >
-                    {text}
-                </a>
+                <a href="auth" class="button">Login</a>
             </li>
-        {/each}
-        <li>
-            <a href="auth" class="panel-text">Login</a>
-        </li>
-    </aside>
-{/if}
+        </aside>
+    {/if}
+</nav>
 
 <style>
     .navbar {
@@ -76,13 +89,18 @@
         }
     }
 
+    li {
+        text-align: center;
+        line-height: 1.3rem;
+    }
+
     .brand-logo {
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
-    .menu-button {
+    .mobile-menu-button {
         width: 4rem;
         height: 4rem;
         color: #000000;
@@ -97,16 +115,21 @@
     .desktop-menu {
         gap: 3rem;
 
-        a {
+        button {
             font-size: 150%;
             color: #000000;
             text-decoration: none;
             position: relative;
             transition: color 0.3s ease;
+            background-color: transparent;
+            border-color: transparent;
+            outline: none;
+            border: none;
 
             &:hover,
             &:focus {
                 color: #555555;
+                box-shadow: none;
                 &::after {
                     width: 100%;
                 }
@@ -133,19 +156,19 @@
         }
     }
 
-    a.panel-text {
+    a.button {
         background-color: #0f1620;
         color: #eeeeee !important;
         padding: 0.3rem 1rem;
         position: unset;
         font-size: 120%;
         border-radius: 11%;
-
         transition: color 0.3s ease;
 
         &:hover {
             background-color: transparent;
             color: #000000 !important;
+            text-decoration: none;
             transition:
                 background-color 0.3s ease,
                 color 0.3s ease;
@@ -153,8 +176,9 @@
     }
 
     aside {
-        a {
+        button {
             text-decoration: none;
+            border: none;
         }
     }
 </style>

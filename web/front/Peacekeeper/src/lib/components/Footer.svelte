@@ -1,4 +1,4 @@
-<footer>
+<footer id="about">
     <h2>Sobre nosotros</h2>
     <span> algo sobre nosotros, ya to sabe</span>
     <span>lore ipsun asdjkasdjkas</span>

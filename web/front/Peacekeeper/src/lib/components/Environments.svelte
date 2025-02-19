@@ -32,6 +32,7 @@
     .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        border-radius: 25px; /* TODO: remove this lime when add new images */
         gap: 1rem;
         margin-top: 1rem;
     }
