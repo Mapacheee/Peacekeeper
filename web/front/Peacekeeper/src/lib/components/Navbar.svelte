@@ -21,6 +21,7 @@
         ['Planes', 'plans'],
         ['About', 'about']
     ]
+    // TODO: Improve all navbar styles
 </script>
 
 <MediaQuery query="(max-width: 850px)" bind:matches={isMovileSize} />
@@ -162,7 +163,7 @@
         padding: 0.3rem 1rem;
         position: unset;
         font-size: 120%;
-        border-radius: 11%;
+        border-radius: 10px;
         transition: color 0.3s ease;
 
         &:hover {

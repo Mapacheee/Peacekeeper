@@ -3,14 +3,14 @@
     import '@picocss/pico'
 
     import Navbar from '$lib/components/Navbar.svelte'
-    import Footer from '$lib/components/Footer.svelte'
+    import AboutFooter from '$lib/components/AboutFooter.svelte'
 </script>
 
 <Navbar />
 <div class="main-content">
     <slot />
 </div>
-<Footer />
+<AboutFooter />
 
 <style>
     .main-content {
