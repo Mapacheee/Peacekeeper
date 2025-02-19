@@ -11,7 +11,7 @@
         isMenuOpen = !isMenuOpen
     }
 
-    function handleScrollToElementId(elementId: string) {
+    function handleScrollToElement(elementId: string) {
         const plans = document.querySelector(`#${elementId}`)
         plans?.scrollIntoView({ behavior: 'smooth' })
     }
@@ -45,7 +45,7 @@
                 <li>
                     <button
                         class={name == 'Inicio' ? 'active' : ''}
-                        onclick={() => handleScrollToElementId(id)}
+                        onclick={() => handleScrollToElement(id)}
                     >
                         {name}
                     </button>
@@ -63,7 +63,7 @@
                     <button
                         role="link"
                         class={name == 'Inicio' ? 'active' : ''}
-                        onclick={() => handleScrollToElementId(id)}
+                        onclick={() => handleScrollToElement(id)}
                     >
                         {name}
                     </button>

@@ -1,11 +1,7 @@
 <script lang="ts">
-    function handleScrollToPlans() {
-        const plans = document.querySelector('#plans')
+    function handleScrollToELement(elementId: string) {
+        const plans = document.querySelector(`#${elementId}`)
         plans?.scrollIntoView({ behavior: 'smooth' })
-    }
-    function handleScrollToEnvironments() {
-        const information = document.querySelector('#environments')
-        information?.scrollIntoView({ behavior: 'smooth' })
     }
 </script>
 
@@ -16,9 +12,11 @@
             <h1>Protección en tiempo real con tecnología avanzada.</h1>
             <p>Detecta y previene situaciones de violencia con</p>
             <p>nuestro sistema inteligente de análisis de imágenes.</p>
-            <button onclick={handleScrollToPlans}>Ver planes</button>
+            <button onclick={() => handleScrollToELement('plans')}
+                >Ver planes</button
+            >
             <button
-                onclick={handleScrollToEnvironments}
+                onclick={() => handleScrollToELement('environments')}
                 class="secondary outline">Saber más</button
             >
         </div>
