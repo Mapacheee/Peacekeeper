@@ -1,6 +1,7 @@
 <script lang="ts">
     import ValidatedInput from '$lib/components/ValidatedInput.svelte'
     import type { ValidationRule } from '$lib/components/ValidatedInput.svelte'
+    import { tryRegister } from '$lib/services/auth-fetch.js'
     import {
         emailRules,
         passwordRules
@@ -9,8 +10,10 @@
     let email: string | null = $state(null)
     let password: string | null = $state(null)
     let confirmPassword: string | null = $state(null)
-    let name: string | null = $state(null)
-    let lastname: string | null = $state(null)
+    let names: string | null = $state(null)
+    let lastnames: string | null = $state(null)
+    let isLoading: boolean = $state(false)
+    let inputErrorMsg: string | null = $state(null)
 
     let confirmPasswordRules: Array<ValidationRule> = [
         {
@@ -19,9 +22,35 @@
         }
     ]
 
-    function handleSubmit(event: Event) {
+    async function handleSubmit(event: Event) {
         event.preventDefault()
-        console.log({ email, password, name, lastname, confirmPassword })
+        if (
+            email === null ||
+            password === null ||
+            lastnames === null ||
+            names === null
+        )
+            return
+
+        isLoading = true
+        try {
+            const response = await tryRegister({
+                email,
+                password,
+                lastnames,
+                names
+            })
+            console.log('Login successful:', response)
+            // TODO: Handle successful register (e.g., store token, redirect)
+            inputErrorMsg = null
+            window.location.href = '/dashboard'
+        } catch (err) {
+            inputErrorMsg = 'Porfavor, verifica tus datos'
+            console.error('Login error:', err)
+            // TODO: Handle register error (e.g., show error message)
+        } finally {
+            isLoading = false
+        }
     }
 </script>
 
@@ -37,7 +66,7 @@
                     placeholder="Jane"
                     autocomplete="given-name"
                     validationRules={[]}
-                    bind:value={name}
+                    bind:value={names}
                 />
                 <ValidatedInput
                     label="Apellidos"
@@ -46,7 +75,7 @@
                     placeholder="Doe"
                     autocomplete="family-name"
                     validationRules={[]}
-                    bind:value={lastname}
+                    bind:value={lastnames}
                 />
             </fieldset>
             <fieldset>
@@ -81,7 +110,19 @@
                 />
             </fieldset>
 
-            <input type="submit" value="Registrarse" />
+            <button type="submit">
+                {#if isLoading}
+                    <span aria-busy="true"></span>
+                {:else}
+                    Registrarse
+                {/if}
+            </button>
+            {#if inputErrorMsg}
+                <small class="error">
+                    {inputErrorMsg}
+                </small>
+            {/if}
+
             <small>
                 ¿Ya estás registrado?
                 <a href="/auth/">Inicia sesión</a>

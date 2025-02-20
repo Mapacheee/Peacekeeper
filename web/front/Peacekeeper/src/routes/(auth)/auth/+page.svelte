@@ -13,7 +13,7 @@
 
     async function handleSubmit(event: Event) {
         event.preventDefault()
-        if (email == null || password == null) return
+        if (email === null || password === null) return
         isLoading = true
         try {
             const response = await tryLogin({ email, password })

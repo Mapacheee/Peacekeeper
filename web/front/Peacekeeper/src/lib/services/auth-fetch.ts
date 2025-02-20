@@ -1,5 +1,9 @@
 import axios from 'axios'
-import type { LoginCredentials, LoginResponse } from '../database/auth/login.ts'
+import type {
+    LoginCredentials,
+    LoginResponse,
+    RegisterCredentials
+} from '../database/auth/login.ts'
 
 export async function tryLogin(
     credentials: LoginCredentials
@@ -13,8 +17,8 @@ export async function tryLogin(
 }
 
 export async function tryRegister(
-    credentials: LoginCredentials
-): Promise<LoginResponse> | never {
+    credentials: RegisterCredentials
+): Promise<RegisterCredentials> | never {
     try {
         const response = await axios.post('/api/auth/register', credentials)
         return response.data
