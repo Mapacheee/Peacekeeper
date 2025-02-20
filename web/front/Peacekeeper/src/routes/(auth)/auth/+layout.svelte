@@ -1,5 +1,6 @@
 <script lang="ts">
     import '../../global.css'
+    import './global.css'
     import '@picocss/pico'
 </script>
 

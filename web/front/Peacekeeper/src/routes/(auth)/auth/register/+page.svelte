@@ -1,5 +1,4 @@
 <script lang="ts">
-    import '../global.css'
     import ValidatedInput from '$lib/components/ValidatedInput.svelte'
     import type { ValidationRule } from '$lib/components/ValidatedInput.svelte'
     import {

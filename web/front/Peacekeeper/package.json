@@ -47,6 +47,7 @@
 	},
 	"dependencies": {
 		"@picocss/pico": "^2.0.6",
+		"axios": "^1.7.9",
 		"svelte-icons": "^2.1.0",
 		"svelte-media-queries": "^1.6.2"
 	}

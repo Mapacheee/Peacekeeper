@@ -1,18 +1,33 @@
 <script lang="ts">
-    import './global.css'
     import ValidatedInput from '$lib/components/ValidatedInput.svelte'
-
     import {
         emailRules,
         passwordRules
     } from '$lib/utils/form-validation-rules.js'
+    import { tryLogin } from '$lib/services/auth-fetch.js'
 
     let email: string | null = $state(null)
     let password: string | null = $state(null)
+    let isLoading: boolean = $state(false)
+    let inputErrorMsg: string | null = $state(null)
 
-    function handleSubmit(event: Event) {
+    async function handleSubmit(event: Event) {
         event.preventDefault()
-        console.log({ email, password })
+        if (email == null || password == null) return
+        isLoading = true
+        try {
+            const response = await tryLogin({ email, password })
+            console.log('Login successful:', response)
+            // TODO: Handle successful login (e.g., store token, redirect)
+            inputErrorMsg = null
+            window.location.href = '/dashboard'
+        } catch (err) {
+            inputErrorMsg = 'Email o contraseña incorrectos'
+            console.error('Login error:', err)
+            // TODO: Handle login error (e.g., show error message)
+        } finally {
+            isLoading = false
+        }
     }
 </script>
 
@@ -45,7 +60,19 @@
                 </small>
             </fieldset>
 
-            <input type="submit" value="Inicia sesión" />
+            <button type="submit">
+                {#if isLoading}
+                    <span aria-busy="true"></span>
+                {:else}
+                    Inicia sesión
+                {/if}
+            </button>
+
+            {#if inputErrorMsg}
+                <small class="error">
+                    {inputErrorMsg}
+                </small>
+            {/if}
             <small>
                 ¿Aún no eres un miembro?
                 <a href="/auth/register">Registrate aquí</a>
