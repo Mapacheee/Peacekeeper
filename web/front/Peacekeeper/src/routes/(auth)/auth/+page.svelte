@@ -1,6 +1,7 @@
 <script lang="ts">
     import './global.css'
     import ValidatedInput from '$lib/components/ValidatedInput.svelte'
+
     import {
         emailRules,
         passwordRules
@@ -26,16 +27,16 @@
                     name="email"
                     placeholder="jane@gmail.com"
                     autocomplete="email"
-                    rules={emailRules}
+                    validationRules={emailRules}
                     bind:value={email}
                 />
                 <ValidatedInput
                     label="Password"
                     type="password"
-                    name="email"
-                    placeholder="jane@gmail.com"
+                    name="password"
+                    placeholder="password"
                     autocomplete="current-password"
-                    rules={passwordRules}
+                    validationRules={passwordRules}
                     bind:value={password}
                 />
                 <small>

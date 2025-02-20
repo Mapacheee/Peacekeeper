@@ -11,8 +11,9 @@
         name: string
         placeholder: string
         value: string | null
-        rules: ValidationRule[]
+        validationRules: ValidationRule[]
         autocomplete: AutoFill | null
+        isOptional?: boolean
     }
 
     let {
@@ -21,18 +22,19 @@
         name,
         placeholder,
         value = $bindable(),
-        rules,
-        autocomplete
+        validationRules,
+        autocomplete,
+        isOptional = false
     }: Props = $props()
     let errorMsg: string = $state('')
 
     function validate(inputValue: string): string | null {
-        if (!inputValue) {
+        if (!inputValue && !isOptional) {
             errorMsg = 'Este campo no puede estar vacío'
             return null
         }
 
-        for (const rule of rules) {
+        for (const rule of validationRules) {
             if (!rule.test(inputValue)) {
                 errorMsg = rule.message
                 return null
@@ -58,6 +60,7 @@
         {value}
         {autocomplete}
         oninput={handleInput}
+        onchange={handleInput}
     />
     {#if errorMsg}
         <small class="error">{errorMsg}</small>
