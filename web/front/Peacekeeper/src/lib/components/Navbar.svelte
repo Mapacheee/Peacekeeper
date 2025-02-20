@@ -45,7 +45,7 @@
             {#each pages as [name, id]}
                 <li>
                     <button
-                        class={name == 'Inicio' ? 'active' : ''}
+                        class={name === 'Inicio' ? 'active' : ''}
                         onclick={() => handleScrollToElement(id)}
                     >
                         {name}
@@ -63,7 +63,7 @@
                 <li>
                     <button
                         role="link"
-                        class={name == 'Inicio' ? 'active' : ''}
+                        class={name === 'Inicio' ? 'active' : ''}
                         onclick={() => handleScrollToElement(id)}
                     >
                         {name}

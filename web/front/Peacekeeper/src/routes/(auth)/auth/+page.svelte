@@ -1,39 +1,47 @@
-<script>
+<script lang="ts">
     import './global.css'
+    import ValidatedInput from '$lib/components/ValidatedInput.svelte'
+    import {
+        emailRules,
+        passwordRules
+    } from '$lib/utils/form-validation-rules.js'
 
-    // TODO: add form validation
+    let email: string | null = $state(null)
+    let password: string | null = $state(null)
+
+    function handleSubmit(event: Event) {
+        event.preventDefault()
+        console.log({ email, password })
+    }
 </script>
 
 <main class="container form-container">
     <article>
         <h4>Inicio de sesión</h4>
-
-        <form method="post">
+        <form method="post" onsubmit={handleSubmit} novalidate>
             <fieldset>
-                <label>
-                    Email
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="jane@gmail.com"
-                        autocomplete="email"
-                    />
-                    <small id="email-helper" class="error">
-                        you must provide a valid email address
-                    </small>
-                </label>
-                <label>
-                    Contraseña
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="contraseña"
-                        autocomplete="current-password"
-                    />
-                    <small id="password-helper" class="error hide">
-                        you must provide a password
-                    </small>
-                </label>
+                <ValidatedInput
+                    label="Email"
+                    type="email"
+                    name="email"
+                    placeholder="jane@gmail.com"
+                    autocomplete="email"
+                    rules={emailRules}
+                    bind:value={email}
+                />
+                <ValidatedInput
+                    label="Password"
+                    type="password"
+                    name="email"
+                    placeholder="jane@gmail.com"
+                    autocomplete="current-password"
+                    rules={passwordRules}
+                    bind:value={password}
+                />
+                <small>
+                    <a href="/auth/forgot-password">¿Olvidaste tu contraseña?</a
+                    >
+                </small>
             </fieldset>
 
             <input type="submit" value="Inicia sesión" />

@@ -15,7 +15,7 @@
 <article>
     <h3>{plan.name} ({plan.type})</h3>
     <h5>
-        clp ${plan.price.toLocaleString('es-CL')}/{plan.type == 'mensual'
+        clp ${plan.price.toLocaleString('es-CL')}/{plan.type === 'mensual'
             ? 'mes'
             : plan.type}
     </h5>
