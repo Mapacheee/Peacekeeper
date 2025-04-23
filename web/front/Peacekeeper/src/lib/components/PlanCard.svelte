@@ -33,7 +33,7 @@
         {/each}
     </ul>
     <footer>
-        <a role="button" href=".">Elejir plan</a>
+        <a role="button" href=".">Elegir plan</a>
     </footer>
 </article>
 

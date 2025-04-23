@@ -11,13 +11,13 @@
             </p>
             <p>
                 Benjamin:
-                <a href="mailto:ejemplo@gmail.com" class="secondary"
+                <a href="mailto:isasmendi223@gmail.com" class="secondary"
                     >benjamin-ejemplo@gmail.com</a
                 >
             </p>
             <p>
                 Martín:
-                <a href="mailto:ejemplo@gmail.com" class="secondary"
+                <a href="mailto:martinleonpizarro.ml@gmail.com" class="secondary"
                     >martin-ejemplo@gmail.com</a
                 >
             </p>
